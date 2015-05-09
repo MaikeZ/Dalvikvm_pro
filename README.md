@@ -1,9 +1,7 @@
-# Dalvikvm_pro
-Android Dalvikvm
-=====
+# Android Dalvikvm
 ### dalvikvm:用来后台创建一个虚拟机运行指定的java类
->核心：dalvikvm –cp dex化jar路径 需要执行的主函数类完整类名 主函数参数
->>主函数多个参数的空格隔开
+	核心：dalvikvm –cp dex化jar路径 需要执行的主函数类完整类名 主函数参数
+	主函数多个参数的空格隔开
 
 ### 前置说明
 		ANDROID_DATA默认为/data
