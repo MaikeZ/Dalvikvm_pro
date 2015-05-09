@@ -4,14 +4,14 @@
 	主函数多个参数的空格隔开
 
 ### 前置说明
-		ANDROID_DATA默认为/data
-		执行dalvikvm后需要生成一个dex文件存放在$ANDROID_DATA/dalvik-cache 目录下
-		所以执行时必须对目录要有写入权限。一般情况下，程序无root权限。所以无法读写默认的/data/ dalvik-cache区。只能存在应用本身的缓存区域。/data/data/包名/ 目录下。
-		执行export ANDROID_DATA=/data/data/包名/ 修改环境变量，紧接着执行dalvikvm命令。代码中执行时一定要用逗号隔开，同一句执行，这样环境变量的修改才有效。
-		执行完全后发现/data/data/包名/dalvik-cache 目录下生成对应的dex文件。并且主函数被执行。
-		普通jar dx流程
-		找到SDK的目录/build-tools/android-x.x/ 不同的build版本目录名可能有所区别，目录下面有dx工具就可以。
-		执行dx --dex --output=out.jar in.jar 得到out.jar （这里可以选择用工具混淆）。	应用中一般携带jar，作为放在assets是一种方法，但是容易被直接解压拿走。后想到另外一种方法，将文件转成byte数组。要用的时候还原成文件。这样文件更加安全。而且后面如果代码混淆后可以进一步增加安全系数
+	ANDROID_DATA默认为/data
+	执行dalvikvm后需要生成一个dex文件存放在$ANDROID_DATA/dalvik-cache 目录下
+	所以执行时必须对目录要有写入权限。一般情况下，程序无root权限。所以无法读写默认的/data/ dalvik-cache区。只能存在应用本身的缓存区域。/data/data/包名/ 目录下。
+	执行export ANDROID_DATA=/data/data/包名/ 修改环境变量，紧接着执行dalvikvm命令。代码中执行时一定要用逗号隔开，同一句执行，这样环境变量的修改才有效。
+	执行完全后发现/data/data/包名/dalvik-cache 目录下生成对应的dex文件。并且主函数被执行。
+	普通jar dx流程
+	找到SDK的目录/build-tools/android-x.x/ 不同的build版本目录名可能有所区别，目录下面有dx工具就可以。
+	执行dx --dex --output=out.jar in.jar 得到out.jar （这里可以选择用工具混淆）。	应用中一般携带jar，作为放在assets是一种方法，但是容易被直接解压拿走。后想到另外一种方法，将文件转成byte数组。要用的时候还原成文件。这样文件更加安全。而且后面如果代码混淆后可以进一步增加安全系数
 		
 ### 项目组成：
 	Android项目 一个简单apk 展现在手机上。DalvikvmDemo
