@@ -19,16 +19,27 @@ Android Dalvikvm
 	Android项目 一个简单apk 展现在手机上。DalvikvmDemo
 	Java 项目 打包需要执行的main()方法。jar_Demo
 > jar_Demo：
+> 
 > > 1.生成jar包
+> 
 > > > 先说Java项目一个主方法MainMethod 提供一个主函数，里面简单的写个打印，这里为了直观写个日志到SD卡上。
+> 
 > > > 鼠标放在package：net.maikeZ.demo上右键Export成一个jar包。比如in.jar 存在本地。
+> 
 > > 2.dx化jar包
+> 
 > > > 拷贝in.jar到dx目录下。命令行执行dx.bat --dex --output=out.jar in.jar 生成out.jar
+> 
 > > 3.生成byte[]类型存储
+> 
 > > > 方法见net.maike.common.BytesByJar 我这里将上一步生成的out.jar随便丢在本地的D盘test文件夹下.Eclipse里面执行BytesByJar 主函数。在bytes 目录下生成了byte01.java
+> 
 > > > （如果jar比较大的话，会生成多个byteXX.java）
-
+> 
 > DalvikvmDemo
+> 
 > > 将生成的byte01.java 拷贝到net.maikeZ.bytes 下。
+> 
 > > 如果是多个的话 记得在net.maikeZ.util.GetFile.java 里面添加。
+> 
 > > 运行生成apk即可。
