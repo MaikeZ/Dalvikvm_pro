@@ -1,5 +1,6 @@
 # Android Dalvikvm
 ### dalvikvm:用来后台创建一个虚拟机运行指定的java类
+### 即使应用程序被关闭或者杀死。dalvikvm中执行的方法依旧能运行。
 	核心：dalvikvm –cp dex化jar路径 需要执行的主函数类完整类名 主函数参数
 	主函数多个参数的空格隔开
 
